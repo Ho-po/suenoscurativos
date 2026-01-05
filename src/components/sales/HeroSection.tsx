@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
+import cuadernoMockup from "@/assets/cuaderno-mockup.png";
 
 interface HeroSectionProps {
   onCTAClick: () => void;
@@ -41,16 +42,13 @@ export const HeroSection = ({ onCTAClick }: HeroSectionProps) => {
           No estás roto/a. Solo hay memorias que piden ser sanadas.
         </p>
 
-        {/* Product Mockup Placeholder */}
+        {/* Product Mockup */}
         <div className="mb-8 sm:mb-10 md:mb-12">
-          <div className="w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 lg:w-80 lg:h-[28rem] mx-auto bg-secondary/40 border-2 border-primary/30 rounded-xl flex items-center justify-center shadow-gold backdrop-blur-sm">
-            <div className="text-center p-4 sm:p-6 md:p-8">
-              <Sparkles className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-primary mx-auto mb-4 sm:mb-6 lotus-glow" />
-              <p className="text-foreground font-medium text-sm sm:text-base md:text-lg">Cuaderno de Sanación</p>
-              <p className="text-primary text-xs sm:text-sm mt-1 sm:mt-2">con Ho'oponopono</p>
-              <p className="text-muted-foreground text-xs mt-3 sm:mt-4">[Imagen del Ebook]</p>
-            </div>
-          </div>
+          <img 
+            src={cuadernoMockup} 
+            alt="Cuaderno de Sanación con Ho'oponopono - Ebook de meditación y limpieza espiritual" 
+            className="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 mx-auto shadow-gold rounded-lg hover:scale-105 transition-transform duration-500"
+          />
         </div>
 
         {/* CTA Button */}
