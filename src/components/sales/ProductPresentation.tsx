@@ -1,11 +1,14 @@
 import { BookOpen, Layers, PenTool, Sparkles } from "lucide-react";
+import { useState, useCallback, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import preview1 from "@/assets/cuaderno-preview/preview-1.png";
 import preview2 from "@/assets/cuaderno-preview/preview-2.png";
 import preview3 from "@/assets/cuaderno-preview/preview-3.png";
@@ -14,6 +17,17 @@ import preview4 from "@/assets/cuaderno-preview/preview-4.png";
 const previewImages = [preview1, preview2, preview3, preview4];
 
 export const ProductPresentation = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
   const features = [{
     icon: BookOpen,
     title: "Guía Completa",
@@ -64,7 +78,12 @@ export const ProductPresentation = () => {
         {/* Product image placeholder */}
         <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 bg-card rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-primary/20">
           <div className="flex-shrink-0 w-full md:w-auto">
-            <Carousel opts={{ loop: true }} className="w-full max-w-[280px] sm:max-w-xs md:max-w-sm mx-auto md:mx-0">
+            <Carousel 
+              setApi={setApi}
+              opts={{ loop: true }} 
+              plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
+              className="w-full max-w-[280px] sm:max-w-xs md:max-w-sm mx-auto md:mx-0"
+            >
               <CarouselContent>
                 {previewImages.map((image, index) => (
                   <CarouselItem key={index}>
@@ -79,6 +98,21 @@ export const ProductPresentation = () => {
               <CarouselPrevious className="-left-3 sm:-left-4 bg-primary/90 hover:bg-primary text-primary-foreground border-none" />
               <CarouselNext className="-right-3 sm:-right-4 bg-primary/90 hover:bg-primary text-primary-foreground border-none" />
             </Carousel>
+            {/* Pagination dots */}
+            <div className="flex justify-center gap-2 mt-4">
+              {previewImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    current === index 
+                      ? "bg-primary w-4" 
+                      : "bg-primary/30 hover:bg-primary/50"
+                  }`}
+                  aria-label={`Ir al slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-3 sm:mb-4">Mira lo que encontrarás dentro del Cuaderno de Sanación   </h3>
