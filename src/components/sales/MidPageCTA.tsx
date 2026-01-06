@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { trackButtonClick, trackCheckoutIntent } from "@/lib/gtm";
 
 interface MidPageCTAProps {
   onCTAClick: () => void;
 }
+
+const handleMidPageCTAClick = (onCTAClick: () => void) => {
+  trackButtonClick('quiero_transformacion', 'mid_page');
+  trackCheckoutIntent('mid_page');
+  onCTAClick();
+};
 
 export const MidPageCTA = ({ onCTAClick }: MidPageCTAProps) => {
   return (
@@ -24,7 +31,7 @@ export const MidPageCTA = ({ onCTAClick }: MidPageCTAProps) => {
         </p>
 
         <Button
-          onClick={onCTAClick}
+          onClick={() => handleMidPageCTAClick(onCTAClick)}
           size="lg"
           className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-base sm:text-lg group"
         >

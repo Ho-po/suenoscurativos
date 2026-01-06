@@ -1,12 +1,43 @@
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles, Shield, Zap } from "lucide-react";
 import productBundle from "@/assets/product-bundle.png";
+import { trackButtonClick, trackCheckoutIntent, trackPricingSectionView } from "@/lib/gtm";
 
 interface PricingSectionProps {
   onCTAClick: () => void;
 }
 
+const handlePricingCTAClick = (onCTAClick: () => void) => {
+  trackButtonClick('comenzar_sanacion', 'pricing');
+  trackCheckoutIntent('pricing');
+  onCTAClick();
+};
+
 export const PricingSection = ({ onCTAClick }: PricingSectionProps) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasTrackedView = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasTrackedView.current) {
+            trackPricingSectionView();
+            hasTrackedView.current = true;
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const included = [
     "Cuaderno de Sanación con Ho'oponopono (80+ páginas)",
     "Manual de Conexión con los Arcángeles",
@@ -20,7 +51,7 @@ export const PricingSection = ({ onCTAClick }: PricingSectionProps) => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-secondary" id="pricing">
+    <section ref={sectionRef} className="py-12 sm:py-16 md:py-20 px-4 bg-secondary" id="pricing">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 sm:mb-4">
@@ -82,7 +113,7 @@ export const PricingSection = ({ onCTAClick }: PricingSectionProps) => {
 
             {/* CTA */}
             <Button
-              onClick={onCTAClick}
+              onClick={() => handlePricingCTAClick(onCTAClick)}
               size="lg"
               className="w-full text-sm sm:text-base md:text-lg py-5 sm:py-6 md:py-7 bg-green-600 hover:bg-green-700 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-cta"
             >
