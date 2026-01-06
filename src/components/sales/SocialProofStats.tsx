@@ -5,22 +5,22 @@ export const SocialProofStats = () => {
     {
       icon: Users,
       value: "2.347+",
-      label: "Alunos transformados"
+      label: "Alumnos transformados"
     },
     {
       icon: Star,
       value: "4.9",
-      label: "Avaliação média"
+      label: "Calificación promedio"
     },
     {
       icon: Heart,
       value: "98%",
-      label: "Taxa de satisfação"
+      label: "Tasa de satisfacción"
     },
     {
       icon: ShieldCheck,
-      value: "7 dias",
-      label: "Garantia total"
+      value: "7 días",
+      label: "Garantía total"
     }
   ];
 

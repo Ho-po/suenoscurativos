@@ -1,6 +1,6 @@
 import { Gift, Sparkles, Heart, BookOpen, Home, Shuffle, Calendar, Headphones, HeartHandshake } from "lucide-react";
 
-// Importar imagens dos bônus
+// Importar imágenes de los bonus
 import bonusArcangeles from "@/assets/bonus/bonus-arcangeles.png";
 import bonusColorear from "@/assets/bonus/bonus-colorear.png";
 import bonusDecodificador from "@/assets/bonus/bonus-decodificador.png";
@@ -107,7 +107,7 @@ export const BonusList = () => {
                 key={index}
                 className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group flex flex-col"
               >
-                {/* Imagem do produto no topo */}
+                {/* Imagen del producto arriba */}
                 <div className="bg-gradient-to-b from-secondary/50 to-secondary/20 flex items-center justify-center p-4 sm:p-5">
                   <img
                     src={bonus.image}
@@ -116,7 +116,7 @@ export const BonusList = () => {
                   />
                 </div>
                 
-                {/* Conteúdo abaixo */}
+                {/* Contenido abajo */}
                 <div className="p-4 sm:p-5 flex flex-col flex-1">
                   <h3 className="text-sm sm:text-base font-bold text-foreground leading-tight mb-2 line-clamp-2">{bonus.title}</h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed flex-1 line-clamp-3 mb-3">{bonus.description}</p>
