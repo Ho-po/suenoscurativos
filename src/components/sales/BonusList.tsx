@@ -1,4 +1,4 @@
-import { Gift, Sparkles, Heart, BookOpen, Home, Shuffle, Calendar, Headphones } from "lucide-react";
+import { Gift, Sparkles, Heart, BookOpen, Home, Shuffle, Calendar, Headphones, HeartHandshake } from "lucide-react";
 
 // Importar imagens dos bônus
 import bonusArcangeles from "@/assets/bonus/bonus-arcangeles.png";
@@ -9,6 +9,7 @@ import bonusHogar from "@/assets/bonus/bonus-hogar.png";
 import bonusOraculos from "@/assets/bonus/bonus-oraculos.png";
 import bonusDiario from "@/assets/bonus/bonus-diario.png";
 import bonusMeditaciones from "@/assets/bonus/bonus-meditaciones.png";
+import bonusAmorPropio from "@/assets/bonus/bonus-amor-propio.png";
 
 export const BonusList = () => {
   const bonuses = [
@@ -67,6 +68,13 @@ export const BonusList = () => {
       title: "Meditaciones Guiadas Ho'oponopono (Audio)",
       description: "3 meditaciones en audio para diferentes momentos: mañana, noche y limpieza de emergencia.",
       value: "$35"
+    },
+    {
+      icon: HeartHandshake,
+      image: bonusAmorPropio,
+      title: "Cultivando Amor-Propio con Ho'oponopono",
+      description: "Guía para abandonar el juzgamiento, el autoabandono y reconectar con tu valor personal.",
+      value: "$21"
     }
   ];
 
@@ -80,14 +88,14 @@ export const BonusList = () => {
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/20 border border-primary/30 mb-4 sm:mb-6">
             <Gift className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-            <span className="text-sm sm:text-base text-primary font-medium">8 Bonus Exclusivos</span>
+            <span className="text-sm sm:text-base text-primary font-medium">9 Bonus Exclusivos</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 sm:mb-4">
             Lo que <span className="text-gradient-gold">recibes hoy</span>
           </h2>
           <div className="w-16 sm:w-20 md:w-24 h-1 bg-primary mx-auto rounded-full mb-6 sm:mb-8" />
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
-            Además del Cuaderno de Sanación, hoy te llevas estos 8 regalos especiales 
+            Además del Cuaderno de Sanación, hoy te llevas estos 9 regalos especiales 
             para potenciar tu transformación.
           </p>
         </div>
