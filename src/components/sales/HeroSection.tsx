@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import cuadernoMockup from "@/assets/cuaderno-mockup.png";
+import { trackButtonClick, trackCheckoutIntent } from "@/lib/gtm";
 
 interface HeroSectionProps {
   onCTAClick: () => void;
 }
+
+const handleHeroCTAClick = (onCTAClick: () => void) => {
+  trackButtonClick('quiero_sanar', 'hero');
+  trackCheckoutIntent('hero');
+  onCTAClick();
+};
 
 export const HeroSection = ({ onCTAClick }: HeroSectionProps) => {
   return (
@@ -53,7 +60,7 @@ export const HeroSection = ({ onCTAClick }: HeroSectionProps) => {
 
         {/* CTA Button */}
         <Button
-          onClick={onCTAClick}
+          onClick={() => handleHeroCTAClick(onCTAClick)}
           size="lg"
           className="text-sm sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 lg:px-14 py-5 sm:py-6 md:py-7 lg:py-8 gradient-gold text-primary-foreground font-bold shadow-gold hover:opacity-90 transition-all duration-300 hover:scale-105 w-full sm:w-auto max-w-sm sm:max-w-none"
         >
