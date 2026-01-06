@@ -7,7 +7,6 @@ import { WhatYouRelease } from "@/components/sales/WhatYouRelease";
 import { ProgramPhases } from "@/components/sales/ProgramPhases";
 import { BonusList } from "@/components/sales/BonusList";
 import { PricingSection } from "@/components/sales/PricingSection";
-import { OrderBumps } from "@/components/sales/OrderBumps";
 import { TestimonialsSection } from "@/components/sales/TestimonialsSection";
 import { GuaranteeSection } from "@/components/sales/GuaranteeSection";
 import { FAQSection } from "@/components/sales/FAQSection";
@@ -38,7 +37,6 @@ const Index = () => {
       <ProgramPhases />
       <BonusList />
       <PricingSection onCTAClick={handleCheckout} />
-      <OrderBumps />
       <TestimonialsSection />
       <GuaranteeSection />
       <FAQSection />
