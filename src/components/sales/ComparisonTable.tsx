@@ -3,28 +3,28 @@ import { Check, X } from "lucide-react";
 export const ComparisonTable = () => {
   const comparisons = [
     {
-      without: "Carrega culpas e mágoas do passado",
-      with: "Liberta-se de memórias dolorosas"
+      without: "Carga culpas y rencores del pasado",
+      with: "Se libera de memorias dolorosas"
     },
     {
-      without: "Repete padrões tóxicos em relacionamentos",
-      with: "Atrai vínculos saudáveis e amorosos"
+      without: "Repite patrones tóxicos en relaciones",
+      with: "Atrae vínculos sanos y amorosos"
     },
     {
-      without: "Sente bloqueios com dinheiro e abundância",
-      with: "Abre-se para prosperidade e fluxo"
+      without: "Siente bloqueos con el dinero y la abundancia",
+      with: "Se abre a la prosperidad y el flujo"
     },
     {
-      without: "Vive ansiosa e desconectada de si",
-      with: "Encontra paz interior e clareza mental"
+      without: "Vive ansiosa y desconectada de sí misma",
+      with: "Encuentra paz interior y claridad mental"
     },
     {
-      without: "Critica-se constantemente",
-      with: "Desenvolve amor próprio genuíno"
+      without: "Se critica constantemente",
+      with: "Desarrolla amor propio genuino"
     },
     {
-      without: "Sente-se presa ao passado familiar",
-      with: "Cura o linaje e quebra ciclos"
+      without: "Se siente atrapada en el pasado familiar",
+      with: "Sana el linaje y rompe ciclos"
     }
   ];
 
@@ -32,8 +32,8 @@ export const ComparisonTable = () => {
     <section className="py-12 sm:py-16 md:py-20 px-4 bg-card">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 sm:mb-4">
-            A diferença que o <span className="text-gradient-gold">Ho'oponopono</span> faz
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 sm:mb-4">
+            La diferencia que hace el <span className="text-gradient-gold">Ho'oponopono</span>
           </h2>
           <div className="w-16 sm:w-20 md:w-24 h-1 bg-primary mx-auto rounded-full" />
         </div>
@@ -46,7 +46,7 @@ export const ComparisonTable = () => {
                 <X className="w-5 h-5 text-destructive" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-foreground">
-                Sem o Cuaderno
+                Sin el Cuaderno
               </h3>
             </div>
             <ul className="space-y-3">
@@ -73,7 +73,7 @@ export const ComparisonTable = () => {
                 <Check className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-foreground">
-                Com o Cuaderno
+                Con el Cuaderno
               </h3>
             </div>
             <ul className="space-y-3">
@@ -93,7 +93,7 @@ export const ComparisonTable = () => {
 
         <div className="mt-8 text-center">
           <p className="text-lg sm:text-xl font-serif italic text-foreground">
-            "A escolha é sua: continuar carregando o peso do passado ou libertar-se agora."
+            "La elección es tuya: seguir cargando el peso del pasado o liberarte ahora."
           </p>
         </div>
       </div>
