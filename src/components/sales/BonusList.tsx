@@ -92,34 +92,34 @@ export const BonusList = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:gap-5 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
           {bonuses.map((bonus, index) => {
             return (
               <div
                 key={index}
-                className="bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 group flex flex-col"
+                className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group flex flex-col"
               >
                 {/* Imagem do produto no topo */}
-                <div className="bg-secondary/30 flex items-center justify-center p-4 sm:p-6">
+                <div className="bg-gradient-to-b from-secondary/50 to-secondary/20 flex items-center justify-center p-4 sm:p-5">
                   <img
                     src={bonus.image}
                     alt={bonus.title}
-                    className="w-full h-48 sm:h-56 md:h-64 object-contain rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-40 sm:h-48 object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 
                 {/* Conteúdo abaixo */}
-                <div className="p-3 sm:p-4 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 mb-1">
+                <div className="p-4 sm:p-5 flex flex-col flex-1">
+                  <h3 className="text-sm sm:text-base font-bold text-foreground leading-tight mb-2 line-clamp-2">{bonus.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed flex-1 line-clamp-3 mb-3">{bonus.description}</p>
+                  <div className="flex items-center justify-between pt-3 border-t border-border/50">
                     <span className="text-muted-foreground line-through text-xs sm:text-sm">
-                      Valor: {bonus.value}
+                      {bonus.value}
                     </span>
-                    <span className="text-green-500 font-bold text-xs sm:text-sm">
-                      ¡Incluido GRATIS!
+                    <span className="text-green-500 font-bold text-xs sm:text-sm bg-green-500/10 px-2 py-1 rounded-full">
+                      ¡GRATIS!
                     </span>
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-foreground leading-tight mb-2">{bonus.title}</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{bonus.description}</p>
                 </div>
               </div>
             );
