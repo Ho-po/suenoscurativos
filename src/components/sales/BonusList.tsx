@@ -3,8 +3,8 @@ import { Gift, Sparkles, Heart, BookOpen, Home, Shuffle, Calendar, Headphones } 
 // Importar imagens dos bônus
 import bonusArcangeles from "@/assets/bonus/bonus-arcangeles.png";
 import bonusColorear from "@/assets/bonus/bonus-colorear.png";
-import bonusDecodificador from "@/assets/bonus/bonus-decodificador.jpg";
-import bonusLinaje from "@/assets/bonus/bonus-linaje.jpg";
+import bonusDecodificador from "@/assets/bonus/bonus-decodificador.png";
+import bonusLinaje from "@/assets/bonus/bonus-linaje.png";
 import bonusHogar from "@/assets/bonus/bonus-hogar.png";
 import bonusOraculos from "@/assets/bonus/bonus-oraculos.png";
 import bonusDiario from "@/assets/bonus/bonus-diario.png";
